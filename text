@@ -1,0 +1,35 @@
+The JavaScript Event Loop
+
+
+ THE CALL STACK 
+- a data sctructure records where in the program we are.
+
+
+one thread == one call stack == one thing at a time
+ - JS is a single threaded progamming language
+
+
+ BLOCKING
+- What happens when things are slow
+- beacsue js is single thread we have to wait for each action to complete
+ why is this a problem
+- If we are waiting for a synchronous request it cant render anything until they complete
+ a solution
+- asynchronous callbacks
+- run some code, give it a callback, run it later
+
+ WHAT IS THE EVENT LOOP
+- is to look at the CallStack and look at the Task Queue
+- if the stack is empty it takes the fist thing in the task queue and pushes it to the stack which effectivly runs it
+-(the stack is "JS Land" - it will run one thing at a time )
+
+ SET TIMEOUT
+- is the minimun time for a action to execution. (it is not a guaranteed time to execution)
+
+ RENDERING
+- a browser cant render if there is code on the stack
+- by doing thing asynchronously it meas that the page can render once the last item in the call stack has gone, before the next action from the callback queue is in the call stack
+-(dont block the Call Stack things wont render meaning you want have a fluid ui)
+
+
+
